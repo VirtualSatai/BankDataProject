@@ -2,7 +2,7 @@ var bdBankApp = angular.module('bdBankApp', ['ngRoute']);
 
 bdBankApp.constant('APP_CONFIG', {
 	SERVER_URL : 'http://46.101.77.229',
-	SERVER_PORT : 'xxxxx',
+	SERVER_PORT : '16666',
 	ACCOUNTS_SERVICE_NAME : 'accounts',
 	TRANSACTIONS_SERVICE_NAME : 'transactions',
   CATEGORIES_SERVICE_NAME : 'categories'

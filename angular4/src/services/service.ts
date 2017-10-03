@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 export class Service {
 
     private readonly SERVER_URL = "http://46.101.77.229";
-	private readonly SERVER_PORT = "xxxxx";
+	private readonly SERVER_PORT = "16666";
 
 	private readonly ACCOUNT_SERVICE_URL = this.SERVER_URL + ":" + this.SERVER_PORT + "/accounts";
 	private readonly TRANSACTIONS_SERVICE_URL = this.SERVER_URL + ":" + this.SERVER_PORT + "/transactions";
