@@ -1,0 +1,21 @@
+<div ng-controller="overviewCtrl" id="overview" class="wrapper">
+	<div class="main">
+		<chart options="chartOptions"></chart>
+		<button ng-click="refreshChartData()">Opdater graf</button>
+		<hr/>
+		<div class="amount-stats">
+			Transactioner for <input placeholder="år" ng-model="amountStats.year" ng-init="amountStats.year='2016'" /> med beløb over <input placeholder="beløb" ng-model="amountStats.min" 
+			ng-init="amountStats.min='100'" /> kr
+			<button ng-click="refreshAmountStats()">Søg</button>
+			<div class="amount-stats-transactions">
+				<ul class="transactions">
+					<li ng-repeat="transaction in transactions"> 
+						{{ transaction.trx_time }}
+						{{ transaction.trx_description }}
+						{{ transaction.trx_ammount }}
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
