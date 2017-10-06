@@ -141,3 +141,11 @@ header img {
 	padding-top: 2rem;
 }
 /*END: overblik*/
+
+#transactions .transaction .amount-kage {
+	color: black;
+}
+
+#transactions .transaction .amount-abe {
+	color: red;
+}

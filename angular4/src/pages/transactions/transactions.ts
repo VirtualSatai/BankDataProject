@@ -53,6 +53,9 @@ export class Transactions {
         this.service.fetchTransactionsByPage(account.account_nbr, page)
         .then(data => {
             this.transactions = data['transactions'];
+            for(let t of this.transactions) {
+                t.clazz = t.trx_ammount > 0 ? "-kage" : "-abe";
+            }
         })
     }
 
