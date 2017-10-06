@@ -15,9 +15,10 @@
 				<div class="date">{{ transaction.trx_time | date:"dd.MM.yyyy" }}</div>
 				<div class="category">{{ transaction.trx_subcategory }} - {{ transaction.trx_category }} </div>
 				<div class="text">{{ transaction.trx_description }}</div>
-				<div class="amount{{ transaction.clazz }}">{{ transaction.trx_ammount }}</div>
+				<div class="amount{{ transaction.clazz }}">{{ transaction.trx_ammount | number:"3.2-2" }}</div>
 			</li>
 		</ul>
 		<button (click)="getMoreTransactions()" class="get-more">Hent flere</button>
+		<button (click)="toTheTop()" class="to-top">To top</button>
 	</div>
 </div>

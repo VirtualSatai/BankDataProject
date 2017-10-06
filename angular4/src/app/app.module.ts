@@ -25,8 +25,14 @@ export const routes: Routes = [
   { path: 'search', component: Search }
 ];
 
+highcharts.setOptions({
+    lang: {
+        thousandsSep: ",",
+    }
+})
+
 export function highchartsFactory() {
-  return highcharts;
+    return highcharts;
 }
 
 @NgModule({

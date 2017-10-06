@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Service } from '../../services/service';
 import { Router } from '@angular/router';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
     templateUrl: './front.html'

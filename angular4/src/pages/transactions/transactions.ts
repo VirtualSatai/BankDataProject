@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Service } from '../../services/service';
 import { ActivatedRoute } from '@angular/router';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
     templateUrl: './transactions.html'
@@ -12,6 +13,7 @@ export class Transactions {
     private accounts = [];
     private selectedAccount;
     private currentPage;
+	private lastScroll;
 
     constructor(
         private service: Service,
@@ -26,6 +28,7 @@ export class Transactions {
                 this.accountDataReady(data);
             }
         )
+		this.lastScroll = (new Date).getTime()
     }
 
     private accountDataReady(data){
@@ -67,9 +70,26 @@ export class Transactions {
         });
     }
 
+    private toTheTop(){
+        window.scrollTo(0, 0);
+    }
+
     private isAccountSelected(account){
         return account.account_nbr == this.selectedAccount.account_nbr;
-    }
+	}
+    
+	@HostListener('window:scroll', ['event'])
+	private onWindowScroll(){
+		let pos = (document.documentElement.scrollTop || document.body.scrollTop); // + document.documentElement.offsetHeight;
+		let max = document.documentElement.scrollHeight;
+		let clientHeight = document.documentElement.clientHeight
+		
+		let newTime = (new Date).getTime();
+		if(newTime - this.lastScroll > 500 && (clientHeight + pos) / max > 0.9) {
+			this.lastScroll = newTime;
+			this.getMoreTransactions();
+		}
+	}
 
     ngOnDestroy() {
         this.paramsSubscription.unsubscribe();
