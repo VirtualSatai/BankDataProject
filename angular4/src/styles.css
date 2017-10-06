@@ -14,6 +14,10 @@
        url('/assets/fonts/open-sans-v13-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
+a {
+    color: hotpink;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -49,14 +53,8 @@ header img {
     float: left;
 }
 
-header a {
-	text-decoration: none;
-	color: white;
-}
-
 .nav-link {
 	text-decoration: none;
-	color: black;
 	cursor: pointer;
 }
 
@@ -79,10 +77,6 @@ header a {
 }
 
 /*forside*/
-#front .accounts a{
-	color: #249aff;
-}
-
 #front .accounts{
 	width: 100%;
     float: left;
@@ -107,12 +101,12 @@ header a {
 
 /*kontobevægelser*/
 #transactions .account a.selected{
-	color: #249aff;
+	text-decoration: underline;
+	color: #660034;
 }
 
 #transactions .account a{
 	text-decoration: none;
-	color: #000;
 }
 
 #transactions .transactions{
