@@ -147,3 +147,7 @@ header a {
 	padding-top: 2rem;
 }
 /*END: overblik*/
+
+.balance, .amount {
+    text-align: right;
+}

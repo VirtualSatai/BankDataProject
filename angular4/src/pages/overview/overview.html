@@ -15,7 +15,7 @@
 					<li *ngFor="let transaction of transactions"> 
 						{{ transaction.trx_time }}
 						{{ transaction.trx_description }}
-						{{ transaction.trx_ammount }}
+						{{ transaction.trx_ammount | number:"3.2-2" }}
 					</li>
 				</ul>
 			</div>

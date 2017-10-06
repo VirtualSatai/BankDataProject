@@ -22,8 +22,14 @@ export const routes: Routes = [
   { path: 'overview', component: Overview }
 ];
 
+highcharts.setOptions({
+    lang: {
+        thousandsSep: ",",
+    }
+})
+
 export function highchartsFactory() {
-  return highcharts;
+    return highcharts;
 }
 
 @NgModule({
