@@ -14,12 +14,15 @@ import { AppComponent } from './app.component';
 import { Front } from '../pages/front/front';
 import { Transactions } from '../pages/transactions/transactions';
 import { Overview } from '../pages/overview/overview';
+import { Search } from '../pages/search/search';
+
 
 export const routes: Routes = [
   { path: '', component: Front },
   { path: 'transactions', component: Transactions},
   { path: 'transactions/:id', component: Transactions },
-  { path: 'overview', component: Overview }
+  { path: 'overview', component: Overview },
+  { path: 'search', component: Search }
 ];
 
 highcharts.setOptions({
@@ -37,7 +40,8 @@ export function highchartsFactory() {
     Front,
     Transactions,
     Overview,
-    AppComponent
+    AppComponent,
+      Search
   ],
   imports: [
     BrowserModule,

@@ -89,17 +89,4 @@ export class Overview {
         this.chart.xAxis[0].categories = this.chartData.names;
         this.chart.series[0].setData(this.chartData.balances);
     }
-
-    private refreshAmountStats(){
-        this.transactions = [];
-        this.service.fetchTransactionsByDate(this.accounts[0].account_nbr, this.amountStats.year + '-01-01', this.amountStats.year + '-12-31').then(
-            data => {
-                for (let transaction of data['transactions']) {
-                   if(transaction.trx_ammount < this.amountStats.min){
-                       this.transactions.push(transaction);
-                   }
-                }
-            }
-        )
-    }
 }
