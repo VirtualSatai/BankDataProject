@@ -65,6 +65,10 @@ export class Transactions {
         });
     }
 
+    private toTheTop(){
+        window.scrollTo(0, 0);
+    }
+
     private isAccountSelected(account){
         return account.account_nbr == this.selectedAccount.account_nbr;
     }
