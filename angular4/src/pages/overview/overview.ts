@@ -79,6 +79,8 @@ export class Overview {
 
     private dataReady(data){
         this.accounts = data.accounts;
+        this.chartData.names = []
+        this.chartData.balances = []
         for(let i = 0; i < this.accounts.length; i++){
             this.chartData.names.push(this.accounts[i].name);
             this.chartData.balances.push(this.accounts[i].balance);
